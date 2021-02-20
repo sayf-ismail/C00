@@ -1,46 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_putchar.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: stun-ism <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/20 14:17:12 by stun-ism          #+#    #+#             */
-/*   Updated: 2021/02/20 15:28:44 by stun-ism         ###   ########.fr       */
+/*   Created: 2021/02/20 12:58:50 by stun-ism          #+#    #+#             */
+/*   Updated: 2021/02/20 15:10:47 by stun-ism         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include <unistd.h>
 
-void	ft_putchar(char c);
-
-void	rush(int x, int y)
+void	ft_putchar(char c)
 {
-	int row;
-	int column;
-
-	row = 1;
-	while (row <= y)
-	{
-		column = 1;
-		while (column <= x)
-		{
-			if (column == x || column == 1 || row == y || row == 1)
-			{
-				ft_putchar('*');
-			} else {
-				ft_putchar(' ');
-			}
-			if (column == x)
-				ft_putchar('\n');
-			column++;
-		}
-		row++;
-	}
+	write(1, &c, 1);
 }
 
-int		main(void)
-{
-	rush(5, 8);
-	return (0);
-}
