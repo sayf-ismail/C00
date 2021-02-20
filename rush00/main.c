@@ -6,7 +6,7 @@
 /*   By: stun-ism <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/20 14:17:12 by stun-ism          #+#    #+#             */
-/*   Updated: 2021/02/20 15:28:44 by stun-ism         ###   ########.fr       */
+/*   Updated: 2021/02/20 16:11:16 by stun-ism         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,21 @@ void	rush(int x, int y)
 		{
 			if (column == x || column == 1 || row == y || row == 1)
 			{
-				ft_putchar('*');
-			} else {
+				if ((column == 1 && row == 1) || (column == x && row == y))
+				{
+					ft_putchar('A');
+				}
+				else if ((column == x && row == 1) || (column == 1 && row == y))
+				{
+					ft_putchar('C');
+				}
+				else
+				{
+					ft_putchar('B');
+				}
+			}
+			else
+			{
 				ft_putchar(' ');
 			}
 			if (column == x)
