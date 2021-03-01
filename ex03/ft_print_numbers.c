@@ -1,25 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_alphabet.c                                :+:      :+:    :+:   */
+/*   ft_print_numbers.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: stun-ism <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: stun-ism <stun-ism@student.42kl.edu>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/20 14:06:10 by stun-ism          #+#    #+#             */
-/*   Updated: 2021/02/20 14:12:41 by stun-ism         ###   ########.fr       */
+/*   Created: 2021/02/24 14:45:20 by stun-ism          #+#    #+#             */
+/*   Updated: 2021/02/25 23:02:02 by stun-ism         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	ft_print_alphabet(void)
+void	ft_print_numbers(void)
 {
-	char c;
+	int		c;
+	char	str;
 
-	c = 'a';
-	while (c <= 'z')
+	c = 0;
+	while (c <= 9)
 	{
-		write(1, &c, 1);
+		str = '0' + c;
+		write(1, &str, 1);
 		c++;
 	}
 }

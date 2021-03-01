@@ -1,25 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_alphabet.c                                :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: stun-ism <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: stun-ism <stun-ism@student.42kl.edu>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/20 14:06:10 by stun-ism          #+#    #+#             */
-/*   Updated: 2021/02/20 14:12:41 by stun-ism         ###   ########.fr       */
+/*   Created: 2021/02/26 13:47:28 by stun-ism          #+#    #+#             */
+/*   Updated: 2021/02/26 13:53:39 by stun-ism         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	ft_print_alphabet(void)
+void	ft_putnbr(int nb)
 {
-	char c;
+	char tens;
+	char units;
 
-	c = 'a';
-	while (c <= 'z')
-	{
-		write(1, &c, 1);
-		c++;
-	}
+	tens = '0' + nb / 10;
+	units = '0' + nb % 10;
+	write(1, &tens, 1);
+	write(1, &units, 1);
 }

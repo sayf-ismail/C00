@@ -1,25 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_alphabet.c                                :+:      :+:    :+:   */
+/*   v4_ft_putnbr.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: stun-ism <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: stun-ism <stun-ism@student.42kl.edu>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/20 14:06:10 by stun-ism          #+#    #+#             */
-/*   Updated: 2021/02/20 14:12:41 by stun-ism         ###   ########.fr       */
+/*   Created: 2021/02/26 13:47:28 by stun-ism          #+#    #+#             */
+/*   Updated: 2021/03/01 13:52:12 by stun-ism         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	ft_print_alphabet(void)
+void	ft_putnbr(int nb)
 {
 	char c;
 
-	c = 'a';
-	while (c <= 'z')
+	// Is num negative?
+	if (nb < 0)
 	{
+		c = '-';
 		write(1, &c, 1);
-		c++;
+		nb *= -1;// Turn integer positive
 	}
+
+	// Is num positive?
+	if (nb)
+	{
+		ft_putnbr(nb/10);// Recursive call!
+		c = '0' + (nb % 10);
+		write(1, &c, 1);
+	} else
+		return;
+
+	//c = '\n';
+	//write(1, &c, 1);
 }
