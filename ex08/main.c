@@ -1,6 +1,7 @@
 #include <unistd.h>
+#include <stdio.h>
 
-void ft_print_combn(int n);
+void ft_print_combn( int n);
 
 int		main(void) 
 {
